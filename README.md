@@ -1,17 +1,18 @@
 # Hi, I'm Danish Akbar 👋
 ### Senior Full-Stack Engineer & Automation Specialist
 
-I engineer scalable web applications, business automation engines, and custom APIs that help founders and agencies scale revenue and save hours of manual work.
+I engineer scalable web applications, enterprise business systems, and autonomous automation pipelines that help founders and corporations scale revenue and save hundreds of operational hours.
 
 [![Email](https://img.shields.io/badge/Email-Direct_Contact-EA4335?style=for-the-badge&logo=gmail)](mailto:danishakbarofficial@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=for-the-badge&logo=github)](https://github.com/danishakbarofficial-create)
 
 ---
 
 ### 🚀 What I Specialize In
 
-- 💻 **Full-Stack Web Development:** High-performance web apps, custom dashboards, SaaS MVPs, and responsive frontends.
+- 💻 **Full-Stack Web & Enterprise Development:** High-performance web apps, custom dashboards, SaaS MVPs, and complex business architectures.
 - ⚡ **Workflow & Business Automation:** Autonomous bots, headless web scrapers, data pipelines, and real-time alert systems.
-- 🔌 **Backend Architecture & APIs:** RESTful APIs, third-party integrations (Stripe, PayPal, CRMs), and webhook listeners.
+- 🔌 **Backend Architecture & APIs:** RESTful APIs, third-party integrations (Stripe, PayPal, Webhooks, CRMs), and microservices.
 - ☁️ **Cloud & DevOps:** AWS EC2, PM2 process management, CI/CD automated deployment pipelines, and Linux server administration.
 
 ---
@@ -21,24 +22,43 @@ I engineer scalable web applications, business automation engines, and custom AP
 | Domain | Technologies & Frameworks |
 | :--- | :--- |
 | **Languages** | PHP, JavaScript (ES6+), Python, HTML5, CSS3, SQL |
-| **Frameworks / Libraries** | Laravel, Node.js, Express.js, React.js, Tailwind CSS |
+| **Frameworks / Libraries** | Laravel, Node.js, Express.js, React.js, Tailwind CSS, Vue.js |
 | **Databases** | MySQL, PostgreSQL, MongoDB, Redis |
 | **Cloud & Tools** | AWS (EC2), Git & GitHub Actions, PM2, Docker, Postman, Vite |
 
 ---
 
-### 🏆 Featured Projects & Case Studies
+### 🏆 Featured Enterprise & Client Projects
 
-#### 1. 🎯 [Client Hunter Pro](https://github.com/danishakbarofficial-create/client-hunter)
+#### 1. 🏢 [MVS ERP — Enterprise Resource Planning Suite](https://github.com/danishakbarofficial-create/mvs-erp)
+*Full-Cycle Business Operations, Inventory & Resource Management*
+- Comprehensive ERP platform handling enterprise supply chain, purchase orders, vendor billing, and role-based staff authorization (RBAC).
+- Built with normalized relational database design, audit logs, and automated financial ledger balancing.
+- **Tech Stack:** Laravel / PHP, MySQL, REST APIs, Tailwind CSS.
+
+#### 2. 💰 [P-Cash — Corporate Petty Cash & Expense Management](https://github.com/danishakbarofficial-create/pcash)
+*Financial Disbursement & Internal Audit Platform*
+- Corporate finance portal allowing department managers to request, approve, and disburse daily operational cash.
+- Real-time balance validation, voucher verification, and tamper-resistant audit logs for finance teams.
+- **Tech Stack:** PHP, MySQL, Financial Workflow Engine, Chart Analytics.
+
+#### 3. 📋 [FO-Survey — Field Survey & Data Intelligence Platform](https://github.com/danishakbarofficial-create/fo-survey)
+*Dynamic Form Generation & Real-Time Field Analytics Engine*
+- High-throughput survey engine with dynamic question branching, field validation, and responsive mobile-first UI.
+- Visual dashboard aggregating field data with instant CSV/Excel export and live breakdown metrics.
+- **Tech Stack:** JavaScript, Dynamic Form Builders, REST APIs, Backend Data Pipeline.
+
+#### 4. 🎯 [Client Hunter Pro — Autonomous B2B Lead Engine](https://github.com/danishakbarofficial-create/client-hunter)
 *Autonomous Multi-Platform Lead Discovery & AI Pitch Engine*
-- Real-time scanner tracking high-intent client hiring posts across Reddit & social platforms.
-- Integrated AI tailored pitch generation and instant Telegram webhook delivery.
-- Deployed 24/7 on AWS EC2 with automated CI/CD GitHub Actions pipelines.
+- Real-time scanner tracking high-intent client hiring posts across Reddit with intelligent negative filters.
+- AI tailored pitch generation and instant Telegram webhook delivery in under 60 seconds.
+- Deployed 24/7 on **AWS EC2** with automated CI/CD GitHub Actions pipelines.
 
-#### 2. 📊 Enterprise Project Pulse & Operations CRM
-*Full-Cycle Project Tracking & Quotation Engine*
-- End-to-end management portal for service companies to track milestones, invoices, and procurement.
-- Automated PDF/HTML proposal generator tailored for high-ticket corporate contracts.
+#### 5. 🤖 [Gold Scalper M5 — Automated Algorithmic Trading Bot](https://github.com/danishakbarofficial-create/scalper-bot)
+*High-Frequency Quantitative Execution Bot*
+- Autonomous algorithmic execution engine monitoring live market feeds, volatility regimes, and automated risk/stop-loss triggers.
+- Multi-threaded execution architecture designed for zero latency and continuous uptime.
+- **Tech Stack:** Python / Node.js, WebSockets, REST APIs, Algorithmic Automation.
 
 ---
 
@@ -52,6 +72,6 @@ I engineer scalable web applications, business automation engines, and custom AP
 ---
 
 ### 📬 Ready to build something together?
-Whether you need a full-stack platform, an automated pipeline, or dedicated engineering support:
+Whether you need an enterprise ERP, financial management platform, full-stack application, or automated pipeline:
 - ✉️ **Email:** [danishakbarofficial@gmail.com](mailto:danishakbarofficial@gmail.com)
 - 💬 **Open for:** High-impact freelance contracts, long-term technical partnerships, and consultancies.

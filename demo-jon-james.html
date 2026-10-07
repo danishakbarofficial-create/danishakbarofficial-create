@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment — Jon James Dog Grooming (Bury St Edmunds)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c59b27;
+      --primary-dark: #9e7916;
+      --primary-light: #fdf8eb;
+      --dark: #1a1a1a;
+      --gray-bg: #f8f9fa;
+      --card-border: #e9ecef;
+      --text: #2d3748;
+      --text-muted: #718096;
+      --white: #ffffff;
+      --success: #28a745;
+      --radius: 14px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background-color: #f3f4f6;
+      color: var(--text);
+      line-height: 1.5;
+      padding: 16px 12px 40px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Top Bar */
+    .top-banner {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .top-banner span.badge {
+      background: var(--primary);
+      color: var(--dark);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+
+    /* Header Card */
+    .header-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      border: 1px solid var(--card-border);
+      position: relative;
+    }
+
+    .logo-img {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      padding: 3px;
+      background: #fff;
+      object-fit: cover;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.25);
+    }
+
+    .brand-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .shop-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      padding-top: 14px;
+    }
+
+    .shop-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Stepper Bar */
+    .step-bar {
+      display: flex;
+      background: var(--white);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      justify-content: space-between;
+    }
+
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .step-indicator.active {
+      color: var(--primary-dark);
+    }
+
+    .step-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .step-indicator.active .step-circle {
+      background: var(--primary);
+      color: var(--dark);
+    }
+
+    .step-indicator.completed .step-circle {
+      background: var(--success);
+      color: white;
+    }
+
+    /* Main Box */
+    .booking-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--card-border);
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Services Grid */
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .service-card {
+      border: 2px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: var(--white);
+    }
+
+    .service-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .service-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .service-info h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .service-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .service-info .includes {
+      font-size: 11px;
+      color: #059669;
+      font-weight: 500;
+    }
+
+    .service-price {
+      text-align: right;
+    }
+
+    .service-price .price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .service-price .duration {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Step 2: Date & Time Picker */
+    .date-scroller {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      scrollbar-width: thin;
+    }
+
+    .date-btn {
+      flex: 0 0 76px;
+      text-align: center;
+      padding: 12px 8px;
+      border: 2px solid var(--card-border);
+      border-radius: 12px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .date-btn .day-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .date-btn .day-num {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 2px 0;
+    }
+
+    .date-btn .month-name {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .date-btn.selected {
+      border-color: var(--primary);
+      background: var(--dark);
+      color: white;
+    }
+
+    .date-btn.selected .day-name,
+    .date-btn.selected .day-num,
+    .date-btn.selected .month-name {
+      color: white;
+    }
+
+    .time-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .time-slot {
+      padding: 12px 6px;
+      text-align: center;
+      border: 1.5px solid var(--card-border);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: white;
+      transition: all 0.15s;
+    }
+
+    .time-slot:hover {
+      border-color: #cbd5e1;
+    }
+
+    .time-slot.selected {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Action Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--card-border);
+      color: var(--text-muted);
+    }
+
+    /* Step 4: Confirmation screen */
+    .success-card {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+
+    .summary-box {
+      background: var(--gray-bg);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .summary-item:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+      padding-top: 10px;
+    }
+
+    /* Client value footer */
+    .pitch-note {
+      margin-top: 24px;
+      padding: 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #1e40af;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Announcement -->
+    <div class="top-banner">
+      <span class="badge">LIVE PREVIEW</span>
+      <span>Streamlined Instant Booking Engine for Mobile & Desktop</span>
+    </div>
+
+    <!-- Header / Brand -->
+    <div class="header-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/5f157728b2a20e01e9cc34b0/1595258992567-W2K51RQ7OKB3CGUIT5AJ/Jon+James+logo+(WEB).png" alt="Jon James Dog Grooming Logo" class="logo-img">
+      <h1 class="brand-title">Jon James Dog Grooming</h1>
+      <p class="brand-subtitle">Independent, friendly parlour in Bury St Edmunds, Suffolk</p>
+      
+      <div class="shop-meta">
+        <span class="shop-meta-item">📍 Oakview Barn, Green Lane, Gt Barton IP31 2QZ</span>
+        <span class="shop-meta-item">📞 07921 091723</span>
+        <span class="shop-meta-item">⭐ Groom Professional Certified</span>
+      </div>
+    </div>
+
+    <!-- Stepper -->
+    <div class="step-bar">
+      <div class="step-indicator active" id="stepIndicator1">
+        <div class="step-circle">1</div>
+        <span>Service</span>
+      </div>
+      <div class="step-indicator" id="stepIndicator2">
+        <div class="step-circle">2</div>
+        <span>Date & Time</span>
+      </div>
+      <div class="step-indicator" id="stepIndicator3">
+        <div class="step-circle">3</div>
+        <span>Dog Details</span>
+      </div>
+    </div>
+
+    <!-- Main Booking Card -->
+    <div class="booking-card">
+
+      <!-- STEP 1: Select Service -->
+      <div id="step1">
+        <h2 class="step-title">1. Select Grooming Service</h2>
+        <p class="step-desc">Choose the right package for your dog's size and breed.</p>
+
+        <div class="services-list">
+          <div class="service-card selected" onclick="selectService(this, 'Full Groom (Small Dog)', '45', 'Westie, Shih Tzu, Terriers')">
+            <div class="service-info">
+              <h4>Full Groom — Small Dogs (Non-Poodle)</h4>
+              <p>Westie, Shih Tzu, Terriers & similar</p>
+              <span class="includes">✓ Wash • Dry • Nails • Hygiene • Full Clip/Brush</span>
+            </div>
+            <div class="service-price">
+              <div class="price">£45</div>
+              <div class="duration">approx 1h 30m</div>
+            </div>
+          </div>
+
+          <div class="service-card" onclick="selectService(this, 'Full Groom (Medium/Large)', '55', 'Spaniels, Retrievers, Crosses')">
+            <div class="service-info">
+              <h4>Full Groom — Medium to Large Dogs</h4>
+              <p>Spaniels, Retrievers, Medium/Large Crosses</p>
+              <span class="includes">✓ Wash • Dry • Nails • Hygiene • Full Clip/Brush</span>
+            </div>
+            <div class="service-price">
+              <div class="price">from £55</div>
+              <div class="duration">approx 2 hours</div>
+            </div>
+          </div>
+
+          <div class="service-card" onclick="selectService(this, 'Full Groom (Poodle Crosses)', '58', 'Cockerpoos, Labradoodles')">
+            <div class="service-info">
+              <h4>Full Groom — Poodles & Poodle Crosses</h4>
+              <p>Cockerpoos (£55), Labradoodles (£62)</p>
+              <span class="includes">✓ Specialized scissor styling & matting care</span>
+            </div>
+            <div class="service-price">
+              <div class="price">£55 - £62</div>
+              <div class="duration">approx 2 hours</div>
+            </div>
+          </div>
+
+          <div class="service-card" onclick="selectService(this, 'Nail Trim Only', '28', 'All Breeds')">
+            <div class="service-info">
+              <h4>Nail Trim Only (All Breeds)</h4>
+              <p>Includes diamond grinding to remove sharpness (No haircut)</p>
+              <span class="includes">✓ Quick walk-in service</span>
+            </div>
+            <div class="service-price">
+              <div class="price">£28 - £35</div>
+              <div class="duration">approx 20 mins</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="goToStep(2)">
+            Continue to Date & Time →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Select Date & Time -->
+      <div id="step2" style="display: none;">
+        <h2 class="step-title">2. Choose Appointment Slot</h2>
+        <p class="step-desc">Pick an available morning or afternoon slot at Oakview Barn.</p>
+
+        <!-- Date selector -->
+        <label class="form-label">Select Date:</label>
+        <div class="date-scroller" id="dateScroller">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Time Slots -->
+        <label class="form-label">Available Slots:</label>
+        <div class="time-grid" id="timeGrid">
+          <div class="time-slot selected" onclick="selectTime(this, '09:30 AM')">09:30 AM</div>
+          <div class="time-slot" onclick="selectTime(this, '11:15 AM')">11:15 AM</div>
+          <div class="time-slot" onclick="selectTime(this, '01:00 PM')">01:00 PM</div>
+          <div class="time-slot" onclick="selectTime(this, '02:45 PM')">02:45 PM</div>
+          <div class="time-slot" onclick="selectTime(this, '04:15 PM')">04:15 PM</div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+          <button class="btn btn-primary" onclick="goToStep(3)">Continue to Details →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Dog & Owner Details -->
+      <div id="step3" style="display: none;">
+        <h2 class="step-title">3. Your & Dog's Details</h2>
+        <p class="step-desc">We just need a couple of details to confirm your slot with Jon.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Full Name *</label>
+            <input type="text" id="ownerName" class="form-control" placeholder="e.g. Sarah Jenkins" value="Sarah Jenkins">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" id="ownerPhone" class="form-control" placeholder="e.g. 07921 123456" value="07921 987654">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Dog's Name *</label>
+            <input type="text" id="dogName" class="form-control" placeholder="e.g. Milo" value="Milo">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Breed *</label>
+            <input type="text" id="dogBreed" class="form-control" placeholder="e.g. Cockerpoo" value="Cockerpoo">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Special Notes / Sensitivities (Optional)</label>
+          <textarea id="notes" class="form-control" rows="2" placeholder="e.g. Nervous around dryers, elderly dog, skin allergies..."></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+          <button class="btn btn-primary" onclick="completeBooking()">
+            🎉 Confirm Booking Now
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Confirmation -->
+      <div id="step4" style="display: none;">
+        <div class="success-card">
+          <div class="success-icon">✓</div>
+          <h2 style="font-size: 22px; color: var(--dark); margin-bottom: 6px;">Appointment Requested!</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">
+            Jon James Dog Grooming has reserved your slot at Oakview Barn.
+          </p>
+
+          <div class="summary-box">
+            <div class="summary-item">
+              <span>Appointment ID:</span>
+              <strong id="confirmId">#JJ-8492</strong>
+            </div>
+            <div class="summary-item">
+              <span>Dog:</span>
+              <strong id="confirmDog">Milo (Cockerpoo)</strong>
+            </div>
+            <div class="summary-item">
+              <span>Service:</span>
+              <span id="confirmService">Full Groom (Small Dog)</span>
+            </div>
+            <div class="summary-item">
+              <span>Date & Time:</span>
+              <strong id="confirmDateTime">Tomorrow at 09:30 AM</strong>
+            </div>
+            <div class="summary-item">
+              <span>Location:</span>
+              <span>Oakview Barn, Green Lane, Gt Barton</span>
+            </div>
+            <div class="summary-item">
+              <span>Estimated Price:</span>
+              <span id="confirmPrice">£45</span>
+            </div>
+          </div>
+
+          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+            A confirmation SMS & calendar invite will be sent directly to your phone.
+          </p>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="location.reload()">
+              🔄 Test Another Booking
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Teaser box for Jon -->
+    <div class="pitch-note">
+      💡 <b>Hey Jon!</b> This interactive flow directly solves the blank <code>/book-now</code> page on your Squarespace site so clients can book appointments 24/7 on mobile without you answering hundreds of DMs manually.
+    </div>
+
+  </div>
+
+  <script>
+    let selectedService = { name: 'Full Groom — Small Dogs', price: '£45' };
+    let selectedDate = '';
+    let selectedTime = '09:30 AM';
+
+    function selectService(el, name, price, breeds) {
+      document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedService = { name, price: '£' + price };
+    }
+
+    function selectTime(el, time) {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedTime = time;
+    }
+
+    function initDates() {
+      const container = document.getElementById('dateScroller');
+      container.innerHTML = '';
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
+      const today = new Date();
+      for (let i = 1; i <= 8; i++) {
+        const d = new Date();
+        d.setDate(today.getDate() + i);
+        
+        // Skip Sundays if parlour is closed
+        if (d.getDay() === 0) continue;
+
+        const dayName = days[d.getDay()];
+        const dayNum = d.getDate();
+        const monthName = months[d.getMonth()];
+        const fullDateStr = `${dayName}, ${dayNum} ${monthName}`;
+
+        const btn = document.createElement('div');
+        btn.className = 'date-btn' + (i === 1 ? ' selected' : '');
+        if (i === 1) selectedDate = fullDateStr;
+
+        btn.innerHTML = `
+          <div class="day-name">${dayName}</div>
+          <div class="day-num">${dayNum}</div>
+          <div class="month-name">${monthName}</div>
+        `;
+
+        btn.onclick = function() {
+          document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedDate = fullDateStr;
+        };
+
+        container.appendChild(btn);
+      }
+    }
+
+    function goToStep(step) {
+      document.getElementById('step1').style.display = step === 1 ? 'block' : 'none';
+      document.getElementById('step2').style.display = step === 2 ? 'block' : 'none';
+      document.getElementById('step3').style.display = step === 3 ? 'block' : 'none';
+      document.getElementById('step4').style.display = step === 4 ? 'block' : 'none';
+
+      // Update stepper indicators
+      const s1 = document.getElementById('stepIndicator1');
+      const s2 = document.getElementById('stepIndicator2');
+      const s3 = document.getElementById('stepIndicator3');
+
+      s1.className = 'step-indicator ' + (step === 1 ? 'active' : 'completed');
+      s2.className = 'step-indicator ' + (step === 2 ? 'active' : (step > 2 ? 'completed' : ''));
+      s3.className = 'step-indicator ' + (step === 3 ? 'active' : (step > 3 ? 'completed' : ''));
+
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    function completeBooking() {
+      const dogName = document.getElementById('dogName').value || 'Dog';
+      const dogBreed = document.getElementById('dogBreed').value || 'Breed';
+
+      document.getElementById('confirmId').innerText = '#JJ-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('confirmDog').innerText = `${dogName} (${dogBreed})`;
+      document.getElementById('confirmService').innerText = selectedService.name;
+      document.getElementById('confirmDateTime').innerText = `${selectedDate} at ${selectedTime}`;
+      document.getElementById('confirmPrice').innerText = selectedService.price;
+
+      goToStep(4);
+    }
+
+    // Initialize on load
+    initDates();
+  </script>
+</body>
+</html>
